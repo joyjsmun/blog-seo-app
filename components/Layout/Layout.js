@@ -1,4 +1,5 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image"
 import Link from "next/link";
 
@@ -7,10 +8,12 @@ export const Layout = ({children}) => {
     return(
         <div className="grid grid-cols-[300px_1fr] h-screen max-h-screen" >
             <div className="bg-pink-500 flex flex-col text-white overflow-hidden">
-                <div className="bg-blue-800">
+                <div className="bg-blue-800 px-2 ">
                     <div>Logo</div>
-                    <div>cta button</div>
-                    <div>token</div>
+                    <Link href="/post/new" className="bg-purple-600 tracking-wider w-full text-center font-bold cursor-pointer uppercase px-4 py-2 rounded-md hover:bg-purple-800 transition-colors block">New Post</Link>
+                    <Link href="/tokenTopup" className="block mt-2 text-center">
+                        <FontAwesomeIcon icon={"faCoins"} className="text-yellow-500" />
+                        <span className="pl-1">0 token available</span></Link>
                 </div>
                 <div className="flex-1 overflow-auto bg-gradient-to-b from-blue-800 to-purple-800 ">
                     list of posts
